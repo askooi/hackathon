@@ -1,0 +1,77 @@
+<%- include('../../shared/includes/head', { pageTitle: product.title }) %>
+<link rel="stylesheet" href="/styles/details.css">
+<script src="/scripts/cart-management.js" defer></script>
+<script src="/scripts/comments.js"></script>
+</head>
+<body>
+  <%- include('../../shared/includes/header') %>
+  <main id="product-details">
+    <header>
+      <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+      <div id="product-info">
+        <h1><%= product.title %></h1>
+        <p><%= product.price %>원</p>
+        <!-- 수량 입력 박스 추가 -->
+        <label for="product-quantity">수량:</label>
+        <input type="number" id="product-quantity" name="quantity" min="1" value="1">
+
+        <!-- 장바구니에 담기 버튼 -->
+        <button class="btn" data-productid="<%= product.id %>" data-csrf="<%= locals.csrfToken %>">장바구니에 담기</button>
+
+        <% if (locals.isAuth) { %>
+        <!-- 바로 구매 버튼 추가 -->
+        <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+        <button class="btn" id="buy-now" data-productid="<%= product.id %>" data-csrf="<%= locals.csrfToken %>">구매하기</button>
+        <% } %>
+      </div>
+    </header>
+    
+    <p id="product-description" data-zoom="3"><%= product.description %></p>
+    <% if (locals.isAuth) { %>
+      <% let userHasCommented = comments.some(comment => locals.uid === (comment.userData._id).toString()) %>
+      <% if (!userHasCommented) { %>
+      <!-- 별점 부분 시작 -->
+      <div class="product-rating">
+        <h3>별점 주기</h3>
+        <div class="star-rating">
+          <% for(let i=5; i>=1; i--) { %>
+            <input type="radio" id="star<%= i %>" name="rating" value="<%= i %>" <% if (product.userRating == i) { %> checked <% } %>/>
+            <label for="star<%= i %>"><span><%= i %></span>★</label>
+          <% } %>
+        </div>
+      </div>
+      <!-- 별점 부분 끝 -->
+
+      <!-- 댓글 작성 부분 시작 -->
+      
+      <div class="product-comments">
+        <h3>후기 작성</h3>
+          <textarea id="commentText" rows="4" cols="100" placeholder="댓글을 작성하세요..."></textarea>
+          <button class="btn" id="submitComment" data-productid="<%= product.id %>" data-csrf="<%= locals.csrfToken %>">댓글 작성</button>
+      </div>
+      <% } else { %>
+        <p>이미 후기를 작성했습니다.</p>
+      <% } %>
+    <% } %>
+    <!-- 댓글 작성 부분 끝 -->
+    <!-- 작성된 댓글 보기 부분 시작 -->
+    <div class="product-comment-list">
+      <h3>후기 목록</h3>
+      <ul id="commentList" class="user-comments">
+        <% for (const comment of comments) { %>
+          <li>
+            <div class="comment">
+              <strong><%= comment.userData.name %>:</strong> <%= comment.text %>
+              <span class="comment-rating">⭐ <%= comment.rating %></span> <!-- 별점 표시 -->
+              <p><strong>작성 시간:</strong> <%= new Date(comment.date).toLocaleString() %></p>
+              <% if (locals.uid === (comment.userData._id).toString()) { %> <!-- 현재 로그인한 사용자와 댓글 작성자 비교 -->
+                <button onclick="deleteCommentTrigger('<%= product.id %>', '<%= comment._id %>', '<%= locals.csrfToken %>')" class="btn delete-comment">삭제</button>
+              <% } %>
+            </div>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+    <!-- 작성된 댓글 보기 부분 끝 -->
+  </main>
+<%- include('../../shared/includes/footer') %>

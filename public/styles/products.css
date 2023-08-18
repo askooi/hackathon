@@ -1,0 +1,160 @@
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.category-tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  float: left;
+}
+
+.category-tab {
+  border: none;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-size: 1.1rem; /* 폰트 크기 키우기 */
+  margin: 5px 0;
+  padding: 9px;
+  width: 130px;
+}
+
+.category-tab.active {
+  font-weight: bold;
+  background-color: #ddd;
+  margin-top: 0px;
+}
+
+.category-tab:hover {
+  background-color: #ddd;
+}
+
+.search-section {
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  margin: 20px 0; /* 위 아래 마진 추가 */
+  margin-left: 150px; /* 원하는 여백 값으로 설정 */
+}
+
+.product-search-input {
+  flex: 2; /* 폭 확장 */
+  padding: 10px 15px; /* 패딩 추가 */
+  border-radius: 5px; /* 둥근 테두리 */
+  border: 1px solid var(--color-gray-300);
+  margin-right: 10px; /* 오른쪽 마진 추가 */
+}
+
+.product-search-btn {
+  padding: 10px 15px; /* 패딩 크기 조절 */
+  margin-left: 5px; /* 왼쪽 마진 추가 */
+  border-radius: 5px; /* 둥근 테두리 */
+  background-color: var(--color-gray-50);
+  border: 1px solid var(--color-gray-300);
+  cursor: pointer; /* 포인터 커서 */
+  transition: background-color 0.3s;
+}
+
+.product-search-btn:hover {
+  background-color: var(--color-gray-100);
+}
+
+.voice-btn {
+  background-image: url("/img/voiceimg.png"); /* 실제 이미지 경로로 변경하세요 */
+  background-size: contain; /* 이미지 크기 조절 */
+  background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
+  background-position: center; /* 이미지를 중앙에 위치시키기 */
+  width: 50px; /* 버튼 너비 조정 */
+  height: 50px; /* 버튼 높이 조정 */
+  border: none; /* 기본 테두리 제거 */
+  outline: none; /* 포커스 아웃라인 제거 */
+}
+
+.dc {
+  text-align: center; /* 가운데 정렬 */
+  font-size: 24px; /* 원하는 글씨 크기로 조절 */
+  font-weight: bold;
+  padding: 0px;
+}
+
+.banner-section {
+  margin-left: 0px; /* 원하는 여백 값으로 설정 */
+  float: right;
+}
+
+.image-button {
+  display: inline-block;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+#products-grid {
+  margin: var(--space-10) auto; /* 마진 크기 조절 */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: var(--space-6); /* 갭 크기 조절 */
+}
+
+.product-item {
+  /* border: 1px solid var(--color-gray-200); 여기에서 선 색상과 두께를 설정합니다.
+  border-radius: var(--border-radius-medium); */
+  margin-bottom : 50px;
+  border: none;
+  padding-top: 30px;
+  text-align: center;
+  background-color: var(--color-gray-50);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+  width: 100%;
+  height: 12rem; /* 높이 조절 */
+  object-fit: contain;
+}
+
+.product-item-content {
+  padding: var(--space-6); /* 패딩 크기 조절 */
+  color: var(--color-gray-600);
+}
+
+.product-item-content h2 {
+  font-size: 1.5rem; /* 폰트 크기 조절 */
+  margin: var(--space-4) 0; /* 마진 크기 조절 */
+  color: var(--color-gray-600);
+}
+
+.product-item-actions {
+  display: flex;
+  gap: var(--space-4); /* 갭 크기 조절 */
+  margin-top: var(--space-6); /* 마진 크기 조절 */
+  justify-content: center;
+}
+
+@media (min-width: 48rem) {
+  #product-details header {
+    display: flex;
+  }
+
+  #product-details img {
+    width: 25rem; /* 폭 조절 */
+    height: 18rem; /* 높이 조절 */
+    margin: var(--space-10); /* 마진 크기 조절 */
+  }
+
+  #product-info {
+    text-align: left;
+    margin-left: var(--space-6); /* 좌측 마진 추가로 간격 조절 */
+  }
+
+}
+

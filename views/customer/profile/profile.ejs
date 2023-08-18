@@ -1,0 +1,44 @@
+<%- include('../../shared/includes/head', { pageTitle: '내 정보' }) %>
+<link rel="stylesheet" href="/styles/profile.css">
+</head>
+<body>
+    <%- include('../../shared/includes/header') %>
+    <main>
+        <h1>내 정보</h1>
+        
+        <!-- 유저 정보 섹션 -->
+        <section class="user-profile">
+            <img src="/img/blueprofile.png" width="150" alt="사용자 사진">
+            <div class="user-details">
+                <span class="user-name"><%= inputData.name %></span>
+                <div class="points-details">
+                    <span class="coupon">쿠폰: 5</span>
+                    <span class="points">적립금: 5000</span>
+                </div>
+            </div>
+        </section>
+        <!-- 다양한 기능에 대한 버튼들 -->
+        <div class="user-actions">
+            <button onclick="location.href='/orders'">주문 목록</button>
+            <button onclick="location.href='/orders/cancel'">취소 목록</button>
+            <button onclick="location.href='/profile/comments'">내 리뷰</button>
+            <button onclick="location.href='/profile/change'">정보 수정</button>
+            
+            <div class="cs">
+                <h1>고객센터</h1>
+                <div class="cslist">
+                    <button class="small-button" onclick="location.href='/service/inquire'">문의하기</button>
+                    <button class="small-button" onclick="location.href='/service/faq'">FAQ</button>
+                    <button class="small-button" onclick="location.href='/service/my'">나의 문의</button>
+                </div>
+                <div class="call">
+                    <img
+                        src="/img/call.png"
+                        width="300"
+                        alt="image button"
+                    >
+                </div>
+            </div>
+        </div>
+    </main>
+<%- include('../../shared/includes/footer') %>

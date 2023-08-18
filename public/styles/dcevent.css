@@ -1,0 +1,38 @@
+.dcproducts button {
+  width: 220px;
+  height: 400px;
+  margin: 0px;
+  border: none;
+}
+
+.dcproducts button:hover {
+  filter: brightness(95%); /* 버튼을 어두워지게 만드는 스타일 변경 */
+}
+
+.dcproductwords {
+  margin: 5px;
+}
+
+.productbrname {
+  font-size: 13px;
+  text-align: left;
+}
+
+.productname {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.price {
+  float: left;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.dcrate {
+  float: right;
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
+}

@@ -1,0 +1,10 @@
+.inquireBtn {
+    width : 6rem;
+    height: 3rem;
+    margin-left: 20px;
+    border: none;
+    background-color: var(--color-primary-500);    
+    color : white;
+    font-size:large;
+    border-radius: var(--border-radius-medium);
+}

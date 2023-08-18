@@ -1,0 +1,42 @@
+footer {
+  background-color: #f4f4f4;
+  padding: 20px 0;
+  font-size: 1.2rem; /* 큰 글꼴 */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-info,
+.helpful-links,
+.social-media {
+  width: 30%;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-icon {
+  font-size: 4rem;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-info,
+  .helpful-links,
+  .social-media {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

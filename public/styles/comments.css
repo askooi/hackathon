@@ -1,0 +1,40 @@
+.user-comments {
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  list-style-type: none; /* li 태그에 대한 점을 제거 */
+}
+
+.comment {
+  padding: 20px;
+  border: 1px solid #ddd; /* 테두리 */
+  border-radius: 5px; /* 둥근 모서리 효과 */
+  margin-bottom: 20px; /* 각 댓글 블록 사이의 간격 */
+  background-color: #f9f9f9; /* 배경색 */
+  position: relative; /* 버튼이나 다른 요소들을 위치시키기 위한 기준 */
+}
+
+.comment p {
+  margin-bottom: 10px; /* p 태그들 사이의 간격 */
+}
+
+.comment .btn {
+  display: inline-block; /* 버튼을 인라인 형태로 */
+  padding: 5px 15px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none; /* 링크 밑줄 제거 */
+  transition: background-color 0.3s; /* 버튼의 색상이 부드럽게 변경되도록 */
+}
+
+.comment .btn:hover {
+  background-color: #0056b3; /* 마우스를 올렸을 때의 색상 */
+}
+
+.delete-comment {
+  position: absolute; /* 삭제 버튼 위치 지정 */
+  top: 20px;
+  right: 20px;
+}

@@ -1,0 +1,15 @@
+<%- include('../../shared/includes/head', { pageTitle: '내 댓글' }) %>
+<link rel="stylesheet" href="/styles/comments.css">
+<script src="/scripts/comments.js"></script>
+</head>
+<body>
+  <%- include('../../shared/includes/header') %>
+
+  <main>
+    <h1>내 후기</h1>
+    <ul class="user-comments">
+        <%- include('../../shared/includes/comment-list') %>
+    </ul>
+  </main>
+
+  <%- include('../../shared/includes/footer') %>

@@ -1,0 +1,96 @@
+/* 주문 내역 페이지 기본 스타일 */
+body {
+  font-family: Arial, sans-serif; /* 기본 폰트 설정 */
+  line-height: 1.5;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* 주문 아이템 스타일 */
+.order-item {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.order-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.order-summary h2,
+.order-summary p {
+  margin: 0;
+}
+
+.order-item-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #555;
+}
+
+/* 주문 상세 정보 스타일 */
+.order-details address {
+  font-style: normal;
+  margin-bottom: 20px;
+}
+
+.order-details ul {
+  padding-left: 20px;
+}
+
+.order-details li {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+/* 주문 액션 버튼 스타일 */
+.order-actions select,
+.order-actions button,
+.order-actions-user button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.order-actions select {
+  margin-right: 10px;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+@media (max-width: 767px) {
+  .order-summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-item-price {
+    margin-top: 10px;
+  }
+}
